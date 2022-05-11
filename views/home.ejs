@@ -1,0 +1,72 @@
+<% layout('layouts/boilerPlate') %>
+
+    <main class="container-lg">
+        <section class="bg-dark text-light bg-gradient container-fluid mx-auto mt-5 p-5 rounded-3">
+            <div class="row">
+                <div class="col">
+                    <h1 class="fs-1">Ask Me To Write About Something :)</h1>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <form method="POST" action="/">
+                        <div class="mb-3">
+                            <label for="prompt" class="form-label">Type in your writing prompt
+                                below!</label>
+                            <textarea class="form-control" id="prompt" name="prompt" rows="3"></textarea>
+                        </div>
+                        <div class="d-flex flex-row justify-content-start">
+                            <button class="btn btn-primary bg-primary bg-opacity-25 px-5" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <span>Need Some Help? Here are a few example prompts you can use!</span>
+                </div>
+                <div class="col-12">
+                    <form action="/" method="POST">
+                        <button class="d-block mt-3 px-3 py-2 fs-5 text-white btn btn-secondary border-0" type="submit"
+                            name="prompt" value="Write a scary story about a programmer who can't sleep">Write a scary
+                            story about a programmer who can't sleep</button>
+                        <button class="d-block mt-3 px-3 py-2 fs-5 btn btn-secondary text-white border-0" type="submit"
+                            name="prompt"
+                            value="Write a overly negative and critical review of the television show grey's anatomy">Write
+                            a overly negative and critical review of the television show grey's anatomy.</button>
+                        <button class="d-block mt-3 px-3 py-2 fs-5 btn btn-secondary text-white border-0" type="submit"
+                            name="prompt"
+                            value="Rank the best pokemon by how aesthetically pleasing they appear to be">Rank the best
+                            pokemon by how aesthetically pleasing they appear to be</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="fs-2">Results</h2>
+                </div>
+            </div>
+            <% for( let i=0; i < results.length; i++ ) { %>
+                <div class="row pt-3 my-3 border-top ">
+                    <div class="col-lg-6 col-sm-12 mt-2">
+                        <span
+                            class="fs-3 w-25 d-block text-center mb-2 bg-success bg-opacity-50 border border-success rounded">Input</span>
+                        <span class="fs-4">
+                            <%= results[i].input %>
+                        </span>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 mt-2">
+                        <span
+                            class="fs-3 w-25 d-block text-center mb-2 bg-danger bg-opacity-50 rounded border border-danger">Output</span>
+
+                        <span class="fs-4">
+                            <%= results[i].output %>
+                        </span>
+                    </div>
+                </div>
+                <% } %>
+
+        </section>
+
+    </main>
