@@ -2,9 +2,9 @@
   "name": "shopify-intern-project",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "Start": "node server.js",
+    "start": "node server.js",
     "devStart": "nodemon server.js"
   },
   "keywords": [],
